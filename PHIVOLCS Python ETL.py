@@ -5,8 +5,8 @@ from datetime import datetime
 from dateutil import parser
 from dateutil.parser import parse
 import numpy as np   
-import psycopg2
-from sqlalchemy import create_engine
+# import psycopg2
+# from sqlalchemy import create_engine
 
 #extracting data from 2018 to 2022
 #extraction of data for 2023 will be separated since its url structure is different from 2018 to 2022
@@ -43,89 +43,89 @@ for year in years:
         print(f"CSV created for {month}-{year}")
 
 
-#Extracting Data for January 2023
+# #Extracting Data for January 2023
 
-url = "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_January.html"
+# url = "https://earthquake.phivolcs.dost.gov.ph/EQLatest-Monthly/2023/2023_January.html"
 
-page_request = requests.get(url, verify = False)
+# page_request = requests.get(url, verify = False)
 
-data1 = []
-soup = BeautifulSoup(page_request.content, 'html.parser' )
+# data1 = []
+# soup = BeautifulSoup(page_request.content, 'html.parser' )
 
-trs = soup.find_all('tr')
+# trs = soup.find_all('tr')
 
-for tr in trs:
-    values = [td.text for td in tr.find_all('td')]
-    data1.append(values)
+# for tr in trs:
+#     values = [td.text for td in tr.find_all('td')]
+#     data1.append(values)
 
-# Create a Pandas DataFrame from the data list
-df = pd.DataFrame(data1)
+# # Create a Pandas DataFrame from the data list
+# df = pd.DataFrame(data1)
 
-# Save the DataFrame to a CSV file
-df.to_csv(f'Phivolcs_2023_January.csv', index=False)
+# # Save the DataFrame to a CSV file
+# df.to_csv(f'Phivolcs_2023_January.csv', index=False)
 
-#Extracting Data for February 2023
+# #Extracting Data for February 2023
 
-url = "https://earthquake.phivolcs.dost.gov.ph/2023_February.html"
+# url = "https://earthquake.phivolcs.dost.gov.ph/2023_February.html"
 
-page_request = requests.get(url, verify = False)
+# page_request = requests.get(url, verify = False)
 
-data2 = []
-soup = BeautifulSoup(page_request.content, 'html.parser' )
+# data2 = []
+# soup = BeautifulSoup(page_request.content, 'html.parser' )
 
-trs = soup.find_all('tr')
+# trs = soup.find_all('tr')
 
-for tr in trs:
-    values = [td.text for td in tr.find_all('td')]
-    data2.append(values)
+# for tr in trs:
+#     values = [td.text for td in tr.find_all('td')]
+#     data2.append(values)
 
-# Create a Pandas DataFrame from the data list
-df = pd.DataFrame(data2)
+# # Create a Pandas DataFrame from the data list
+# df = pd.DataFrame(data2)
 
-# Save the DataFrame to a CSV file
-df.to_csv(f'Phivolcs_2023_February.csv', index=False)
+# # Save the DataFrame to a CSV file
+# df.to_csv(f'Phivolcs_2023_February.csv', index=False)
 
-#Extracting Data for March 2023
+# #Extracting Data for March 2023
 
-url = "https://earthquake.phivolcs.dost.gov.ph/2023_March.html"
+# url = "https://earthquake.phivolcs.dost.gov.ph/2023_March.html"
 
-page_request = requests.get(url, verify = False)
+# page_request = requests.get(url, verify = False)
 
-data3 = []
-soup = BeautifulSoup(page_request.content, 'html.parser' )
+# data3 = []
+# soup = BeautifulSoup(page_request.content, 'html.parser' )
 
-trs = soup.find_all('tr')
+# trs = soup.find_all('tr')
 
-for tr in trs:
-    values = [td.text for td in tr.find_all('td')]
-    data3.append(values)
+# for tr in trs:
+#     values = [td.text for td in tr.find_all('td')]
+#     data3.append(values)
 
-# Create a Pandas DataFrame from the data list
-df = pd.DataFrame(data3)
+# # Create a Pandas DataFrame from the data list
+# df = pd.DataFrame(data3)
 
-# Save the DataFrame to a CSV file
-df.to_csv(f'Phivolcs_2023_March.csv', index=False)
+# # Save the DataFrame to a CSV file
+# df.to_csv(f'Phivolcs_2023_March.csv', index=False)
 
-#Extracting Data for April 2023
+# #Extracting Data for April 2023
 
-url = "https://earthquake.phivolcs.dost.gov.ph"
+# url = "https://earthquake.phivolcs.dost.gov.ph"
 
-page_request = requests.get(url, verify = False)
+# page_request = requests.get(url, verify = False)
 
-data4 = []
-soup = BeautifulSoup(page_request.content, 'html.parser' )
+# data4 = []
+# soup = BeautifulSoup(page_request.content, 'html.parser' )
 
-trs = soup.find_all('tr')
+# trs = soup.find_all('tr')
 
-for tr in trs:
-    values = [td.text for td in tr.find_all('td')]
-    data4.append(values)
+# for tr in trs:
+#     values = [td.text for td in tr.find_all('td')]
+#     data4.append(values)
 
-# Create a Pandas DataFrame from the data list
-df = pd.DataFrame(data4)
+# # Create a Pandas DataFrame from the data list
+# df = pd.DataFrame(data4)
 
-# Save the DataFrame to a CSV file
-df.to_csv(f'Phivolcs_2023_April.csv', index=False)
+# # Save the DataFrame to a CSV file
+# df.to_csv(f'Phivolcs_2023_April.csv', index=False)
 
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 years = ["2018", "2019", "2020", "2021", "2022"]
@@ -134,7 +134,7 @@ data_cleaned = []
 
 for year in years:
     for month in months:
-        df = pd.read_csv(rf"C:\Users\User\Desktop\DATA ANALYST\PYTHON\Webscraping\Phivolcs Scraper\Phivolcs_{year}_{month}.csv")
+        df = pd.read_csv(rf"C:\Users\jason.paquibulan\Desktop\Git&Github\Philippine-Earthquake-Monitoring-Dashboard\Phivolcs_{year}_{month}.csv")
 
         #Dropping Excess Column
         column_list = df.shape[1]
@@ -199,7 +199,7 @@ for year in years:
 
 months_2023 = ["January", "February", "March", "April"]
 for month_2023 in months_2023:
-        df = pd.read_csv(rf"C:\Users\User\Desktop\DATA ANALYST\PYTHON\Webscraping\Phivolcs Scraper\Phivolcs_2023_{month_2023}.csv")
+        df = pd.read_csv(rf"C:\Users\jason.paquibulan\Desktop\Git&Github\Philippine-Earthquake-Monitoring-Dashboard\Phivolcs_2023_{month_2023}.csv")
 
         #Dropping Excess Column
         column_list = df.shape[1]
@@ -349,47 +349,49 @@ df['magnitude'] = df['magnitude'].astype(float)
 
 #Connecting to PostgreSQL and loading the scraped data
 
-conn = psycopg2.connect(
-    host="localhost",
-    database="postgres",
-    user="postgres",
-    password="8888"
-)
+# conn = psycopg2.connect(
+#     host="localhost",
+#     database="postgres",
+#     user="postgres",
+#     password="8888"
+# )
 
-engine = create_engine('postgresql+psycopg2://postgres:8888@localhost:5432/postgres')
+# engine = create_engine('postgresql+psycopg2://postgres:8888@localhost:5432/postgres')
 
-df.to_sql('temp_table_name', engine, if_exists='replace')
+df.to_csv('phivolcs.csv', index=True)
 
-# Open a cursor to perform database operations
-cur = conn.cursor()
+# df.to_sql('temp_table_name', engine, if_exists='replace')
 
-cur.execute("""
-    DROP TABLE phivolcs2_dataset;
-""")
+# # Open a cursor to perform database operations
+# cur = conn.cursor()
 
-# Create the  table
+# cur.execute("""
+#     DROP TABLE phivolcs2_dataset;
+# """)
 
-cur.execute("""
-    CREATE TABLE IF NOT EXISTS phivolcs2_dataset (
-        "date_time" VARCHAR ,
-        "latitude_n" FLOAT ,
-        "longitude_e" FLOAT ,
-        "depth_km" FLOAT ,
-        "magnitude" FLOAT ,
-        "location" VARCHAR, 
-        "date_only" DATE ,
-        "time_only" TIME 
-    );
-""")
+# # Create the  table
 
-cur.execute("""
-    INSERT INTO phivolcs2_dataset ("date_time","latitude_n","longitude_e","depth_km","magnitude", "location","date_only", "time_only")
-    SELECT "date_time","latitude_n","longitude_e","depth_km","magnitude", "location","date_only", "time_only"
-    FROM temp_table_name """)
+# cur.execute("""
+#     CREATE TABLE IF NOT EXISTS phivolcs2_dataset (
+#         "date_time" VARCHAR ,
+#         "latitude_n" FLOAT ,
+#         "longitude_e" FLOAT ,
+#         "depth_km" FLOAT ,
+#         "magnitude" FLOAT ,
+#         "location" VARCHAR, 
+#         "date_only" DATE ,
+#         "time_only" TIME 
+#     );
+# """)
 
-cur.close()
+# cur.execute("""
+#     INSERT INTO phivolcs2_dataset ("date_time","latitude_n","longitude_e","depth_km","magnitude", "location","date_only", "time_only")
+#     SELECT "date_time","latitude_n","longitude_e","depth_km","magnitude", "location","date_only", "time_only"
+#     FROM temp_table_name """)
 
-conn.commit()
-conn.close()
+# cur.close()
 
-print("ETL SUCCESSFULL")
+# conn.commit()
+# conn.close()
+
+# print("ETL SUCCESSFULL")
